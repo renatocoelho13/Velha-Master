@@ -1,4 +1,7 @@
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { 
+        box-sizing: border-box; 
+        margin: 0; 
+        padding: 0; }
 
 body {
     font-family: 'Bebas Neue', sans-serif;
@@ -18,12 +21,129 @@ h1 {
     letter-spacing: 0.03em;
 }
 
+.overlapping-menu {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d0012;
+    z-index: 100;
+}
+
+.card {
+    position: relative;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background: #1a001f;
+    border: 1px solid #ff00ff33;
+    border-radius: 16px;
+    padding: 40px 50px;
+    min-width: 320px;
+}
+
+.card.hidden {
+    display: none;
+}
+
+.card.hidem {
+    display: none;
+}
+
+h2 {
+    color: #ff00ff;
+    font-size: 2.5rem;
+    letter-spacing: 0.03em;
+}
+
+label {
+    color: #fff;
+    font-size: 1rem;
+    align-self: flex-start;
+    font-family: sans-serif;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ff00ff55;
+    background: #0d0012;
+    color: #fff;
+    font-size: 1rem;
+    font-family: sans-serif;
+    outline: none;
+    transition: border 0.15s;
+}
+
+input[type="text"]:focus {
+    border-color: #ff00ff;
+}
+
+.btn {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    background:#ff00ff ;
+    color: #0d0012;
+    border: none;
+    padding: 12px 36px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.15s, transform 0.1s;
+    position: relative;
+    z-index: 102;
+}
+
+.btn:hover {
+    background: #cc00cc;
+    transform: scale(1.03);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ff00ff;
+    border: 2px solid #ff00ff;
+}
+
+.btn-secondary:hover {
+    background: #ff00ff99;
+    transform: scale(1.03);
+}
+
+.btn-back {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    background: transparent;
+    color: #ff00ff99;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    letter-spacing: 0.05em;
+    transition: color 0.15s;
+    position: relative;
+    z-index: 102;
+}
+
+.btn-back:hover {
+    color: #ff00ff;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
     gap: 6px;
-    
+    position: relative;
+    z-index: 1;
+}
+
+.board.hidden {
+    display: none;
 }
 
 .cell {
@@ -37,6 +157,8 @@ h1 {
     cursor: pointer;
     transition: background 0.15s;
     user-select: none;
+    position: relative;
+    z-index: 2;
 }
 
 .cell:hover:not(.x):not(.o) {
@@ -55,11 +177,12 @@ h1 {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(245, 245, 245, 0.92);
+    background: rgba(13, 0, 18, 0.92);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    z-index: 200;
 }
 
 .winning-message-show {
@@ -70,6 +193,8 @@ h1 {
     font-size: 2rem;
     font-weight: 600;
     color: #f0f0f0;
+    position: relative;
+    z-index: 201;
 }
 
 #RestartButton {
@@ -82,9 +207,12 @@ h1 {
     padding: 15px 30px;
     border-radius: 10px;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: background 0.15s, transform 0.1s;
+    position: relative;
+    z-index: 201;
 }
 
 #RestartButton:hover {
     background: #333;
+    transform: scale(1.03);
 }
