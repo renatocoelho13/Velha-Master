@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Velha Master</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="menu-overlay" id="menuOverlay">
+    
+        <div class="card" id="cardMain">
+        
+            <h1>Velha Master</h1>
+            <button class="btn" id="btnJogar">Jogar</button>
+            <button class="btn btn-secondary" id="btnConfig">Configurações</button> 
+        </div>    
+            
+        <div class="card hidden" id="cardModo">
+            <button class="btn-back" id="btnVoltar">← Voltar</button>
+            <h2>Modo de Jogo</h2>
+            <button class="btn" id="btnPvP"> 👤 vs 👤 Dois Jogadores</button>
+            <button class="btn" id="btnPVP"> 👤 vs 🤖 Contra bot</button>
+        </div>  
+        
+        <div class="card hidem" id="cardConfig">
+            <button class="btn-back" id="btnVoltarConfig">← Voltar</button>
+            <h2>Configurações</h2>
+            <label>Nome do Jogador 1</label>
+            <input type="text" id="nomeP1" placeholder="Digite seu nome..."/>
+            <label> Nome do Jogador 2</label>
+            <input type="text" id="nomeP2" placeholder="Digite seu nome..."/>
+            <button class="btn" id="btnSalvar">Salvar</button>
+        </div>
+
+    </div>
+
+        <div class="board hidden" id="board"> 
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+
+        <div class="winning-message" id="winning-message">
+        <div data-winning-message-text></div>
+        <button id="RestartButton">Reiniciar</button>
+        </div>
+        <script src="script.js"></script>
+</body>
+</html>
